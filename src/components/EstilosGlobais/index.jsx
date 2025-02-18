@@ -145,6 +145,10 @@ template {
 [hidden] {
   display: none;
 }
+@font-face {
+  font-family: 'Gandhi Sans';
+  src: url('src/assets/fonts/GandhiSans-Regular.otf');
+}
 `
 
 export default EstilosGlobais;
