@@ -7,6 +7,7 @@ const ListaEstilizada = styled.ul`
     padding: 0;
     margin: 0;
     width: 212px;
+    margin-left: 1.5rem;
 `
 
 const BarraLateral = () => {
