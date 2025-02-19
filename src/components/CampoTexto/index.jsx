@@ -9,11 +9,11 @@ const Container = styled.div`
     height: 56px;
     width: 566px;
     max-width: 814px;
-    max-height: 64px;
     border: 2px solid #C98CF1;
     /* border-image: linear-gradient(90deg, #C98CF1 0%, #7B78E5 100%) 1; */
     border-radius: 10px;
     padding: 12px 16px;
+    box-sizing: border-box;
     input {
         background-color: transparent;
         border: none;
@@ -22,7 +22,6 @@ const Container = styled.div`
             font-size: 20px;
             font-weight: 400;
             line-height: 20px;
-            font-family: 'Gandhi Sans', sans-serif;
         }
     }
     img {
