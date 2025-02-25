@@ -11,11 +11,15 @@ const Container = styled.div`
     border: 2px solid #C98CF1;
     /* border-image: linear-gradient(90deg, #C98CF1 0%, #7B78E5 100%) 1; */
     border-radius: 10px;
-    padding: 12px 16px;
+    padding: 10px 16px;
     box-sizing: border-box;
     input {
         background-color: transparent;
         border: none;
+        height: 100%;
+        width: 80%;
+        color: #D9D9D9;
+        font-size: 20px;
         &::placeholder {
             color: #D9D9D9;
             font-size: 20px;

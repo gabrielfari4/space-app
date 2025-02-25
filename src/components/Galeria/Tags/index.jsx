@@ -6,7 +6,7 @@ const Container = styled.div`
     height: 50px;
     align-items: center;
     gap: 1rem;
-    margin-top: 3.5rem;
+    margin-block: 3.5rem 3rem;
 `
 
 const Texto = styled.p`

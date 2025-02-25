@@ -5,16 +5,18 @@ import GandhiSansRegular from './fontes/GandhiSans-Regular.otf';
 
 
 const EstilosGlobais = createGlobalStyle`
-    html {
-  line-height: 1.15; 
-  -webkit-text-size-adjust: 100%; 
-  font-family: GandhiSansRegular;
-}
-body {
-  margin: 0;
-  min-height: 100vh;
-}
-main {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: GandhiSansRegular;
+  }
+  body {
+    min-height: 100vh;
+  }
+/* main {
   display: block;
 }
 h1 {
@@ -148,7 +150,7 @@ template {
 }
 [hidden] {
   display: none;
-}
+} */
 @font-face {
   font-family: 'GandhiSansRegular';
   src: local('Gandhi Sans Regular'), local('GandhiSansRegular'), url(${GandhiSansRegular});
