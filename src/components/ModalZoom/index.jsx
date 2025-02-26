@@ -29,7 +29,7 @@ const DialogEstilizado = styled.dialog`
     }
 `
 
-const ModalZoom = ({ foto, limparFoto }) => {
+const ModalZoom = ({ foto, aoFechar, aoAlternarFavorito }) => {
     const [modalAberto, setModalAberto] = useState(false)
 
     useEffect(() => {
@@ -40,7 +40,7 @@ const ModalZoom = ({ foto, limparFoto }) => {
 
     const fecharModal = () => {
         setModalAberto(false)
-        limparFoto()
+        aoFechar()
     }
 
     return (
@@ -48,7 +48,7 @@ const ModalZoom = ({ foto, limparFoto }) => {
             {foto && <>
                 {modalAberto && <Overlay onClick={fecharModal}/>}
                 <DialogEstilizado open={modalAberto} >
-                    <Imagem foto={foto} expandida={modalAberto}/>
+                    <Imagem foto={foto} expandida={modalAberto} aoAlternarFavorito={aoAlternarFavorito}/>
                     <form method="dialog">
                         <button formMethod="dialog" onClick={fecharModal}>
                             <img src="/icones/fechar.png" alt="" />
