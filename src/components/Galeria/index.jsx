@@ -9,7 +9,8 @@ const GaleriaContainer = styled.div`
 `
 
 const SecaoFluida = styled.section`
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    max-width: 968px;
 `
 
 const PostsContainer = styled.section`
@@ -17,7 +18,7 @@ const PostsContainer = styled.section`
     flex-wrap: wrap;
 `
 
-const Galeria = ({ fotos = [] }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito }) => {
     return (
         <>
             <Tags />
@@ -32,12 +33,14 @@ const Galeria = ({ fotos = [] }) => {
                     <PostsContainer>
                         {fotos.map(foto => 
                         <Imagem 
+                        aoZoomSolicitado={aoFotoSelecionada}
+                        aoAlternarFavorito={aoAlternarFavorito}
                         key={foto.id} 
                         foto={foto}
                         />)}
                     </PostsContainer>
                 </SecaoFluida>
-            <Populares />
+                <Populares />
 
             </GaleriaContainer>
 
