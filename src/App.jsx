@@ -33,7 +33,7 @@ const ContainerGaleria = styled.section`
 
 const App = () => {
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
-  const [fotoSelecionada, setFotoSelecionada] = useState(null);
+  const [fotoSelecionada, setFotoSelecionada] = useState('');
 
   const aoAlternarFavorito = (foto) => {
     setFotosDaGaleria(fotosDaGaleria.map(fotoDaGaleria => {
@@ -42,6 +42,10 @@ const App = () => {
         favorita: fotoDaGaleria.id === foto.id ? !foto.favorita : fotoDaGaleria.favorita
       }
     }))
+  }
+
+  const limparFoto = () => {
+    setFotoSelecionada(null)
   }
 
   return (
@@ -64,7 +68,7 @@ const App = () => {
       </Container>
 
       </AppContainer>
-      <ModalZoom foto={fotoSelecionada}/>
+      <ModalZoom foto={fotoSelecionada} limparFoto={limparFoto}/>
     </FundoGradiente>
   )
 }

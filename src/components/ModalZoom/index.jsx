@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Imagem from "../Galeria/Imagem";
+import { useEffect, useState } from "react";
 
 const Overlay = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
@@ -28,15 +29,28 @@ const DialogEstilizado = styled.dialog`
     }
 `
 
-const ModalZoom = ({ foto, aoFechar }) => {
+const ModalZoom = ({ foto, limparFoto }) => {
+    const [modalAberto, setModalAberto] = useState(false)
+
+    useEffect(() => {
+        if (foto) {
+            setModalAberto(true)
+        }
+    }, [foto])
+
+    const fecharModal = () => {
+        setModalAberto(false)
+        limparFoto()
+    }
+
     return (
         <>
             {foto && <>
-                <Overlay />
-                <DialogEstilizado open={!!foto} onClose={aoFechar}>
-                    <Imagem foto={foto} expandida={true}/>
+                {modalAberto && <Overlay onClick={fecharModal}/>}
+                <DialogEstilizado open={modalAberto} >
+                    <Imagem foto={foto} expandida={modalAberto}/>
                     <form method="dialog">
-                        <button formMethod="dialog">
+                        <button formMethod="dialog" onClick={fecharModal}>
                             <img src="/icones/fechar.png" alt="" />
                         </button>
                     </form>

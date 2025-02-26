@@ -44,6 +44,7 @@ const Figure = styled.figure`
                 display: flex;
                 column-gap: 1.5rem;
                 button {
+                    cursor: pointer;
                     background-color: transparent;
                     border: none;
                     height: 24px;
